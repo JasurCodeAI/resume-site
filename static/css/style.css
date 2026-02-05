@@ -15,10 +15,17 @@
     margin:0;
     font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text);
+  
     background:
       radial-gradient(1000px 700px at 15% 10%, rgba(195,90,90,0.18), transparent 55%),
       radial-gradient(900px 600px at 85% 20%, rgba(90,110,255,0.14), transparent 60%),
       linear-gradient(135deg,var(--bg1),var(--bg2));
+  
+    /* ✅ ВОТ ЭТО ФИКСИТ "ПОВТОРЕНИЕ" */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
   
   /* layout */
