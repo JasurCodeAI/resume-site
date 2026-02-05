@@ -36,11 +36,8 @@ def index():
         ],
 
         "achievements": [
-            "AI digit recognition project",
-            "IELTS Band 7",
             "Olympiad achievements",
             "Open-source projects",
-            "CSCA Physics 95% / Math 87.5%"
         ],
 
         "experience": [

@@ -15,6 +15,15 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <a href="#summary">Summary</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="#experience">Experience</a>
+      </nav>      
   <div class="page">
     <!-- SIDEBAR -->
     <aside class="sidebar">
@@ -23,7 +32,7 @@
         <img class="avatar" src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Avatar">
       </div>
 
-      <section class="side-section">
+      <section class="side-section" id="contact">
         <h2 class="side-title">Contact</h2>
         <ul class="contacts">
           <li><i class="fa-solid fa-phone"></i><a href="tel:+998505155188">+998 50 515 51 88</a></li>
@@ -68,12 +77,12 @@
         <p class="role">{{ data.role }}</p>
       </header>
 
-      <section class="section">
+      <section class="section" id="summary">
         <h2 class="title">Summary</h2>
         <p class="text">{{ data.summary }}</p>
       </section>
 
-      <section class="section">
+      <section class="section" id="experience">
         <h2 class="title">Experience</h2>
 
         {% for e in data.experience %}
@@ -87,7 +96,122 @@
         {% endfor %}
       </section>
 
-      <section class="section">
+      <section class="section" id="projects">
+        <h2 class="title">Projects</h2>
+      
+        <div class="projects-grid">
+      
+          <!-- Project 1 -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <h3 class="project-title">AI Market Indicator</h3>
+              <span class="project-badge">SPA • Real-time</span>
+            </div>
+      
+            <p class="project-desc">
+              Angular SPA for real-time stock & crypto analysis using Gemini API with Google Search Grounding.
+              Generates a concise financial summary and shows citation links to the web sources used.
+            </p>
+      
+            <div class="project-tags">
+              <span>Angular</span>
+              <span>TypeScript</span>
+              <span>Gemini API</span>
+              <span>Search Grounding</span>
+              <span>Signals</span>
+              <span>Tailwind</span>
+            </div>
+      
+            <div class="project-actions">
+              <a class="btn btn-primary" href="https://github.com/JasurCodeAI/AI-Analyst" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+              <!-- Если будет демо-ссылка/скрин позже — раскомментируешь -->
+              <!-- <a class="btn btn-ghost" href="PASTE_LIVE_LINK" target="_blank" rel="noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              </a> -->
+            </div>
+          </article>
+      
+          <!-- Project 2 -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <h3 class="project-title">AI Digit Recognition</h3>
+              <span class="project-badge">ML</span>
+            </div>
+      
+            <p class="project-desc">
+              End-to-end digit recognition project: preprocessing, training, evaluation, and testing pipeline.
+            </p>
+      
+            <div class="project-tags">
+              <span>Python</span>
+              <span>NumPy</span>
+              <span>ML</span>
+              <span>Matplotlib</span>
+            </div>
+      
+            <div class="project-actions">
+              <a class="btn btn-primary" href="https://github.com/JasurCodeAI/NeuralWriter" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </article>
+      
+          <!-- Project 3 -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <h3 class="project-title">Portfolio Website</h3>
+              <span class="project-badge">Web</span>
+            </div>
+      
+            <p class="project-desc">
+              Personal portfolio website with modern dark UI, animations, responsive layout and clickable contacts.
+            </p>
+      
+            <div class="project-tags">
+              <span>Flask</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>UI/UX</span>
+            </div>
+      
+            <div class="project-actions">
+              <a class="btn btn-primary" href="https://github.com/JasurCodeAI/resume-site" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </article>
+      
+          <!-- Project 4 (placeholder) -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <h3 class="project-title">Next Project (Coming Soon)</h3>
+              <span class="project-badge">Roadmap</span>
+            </div>
+      
+            <p class="project-desc">
+              Multi-digit recognition upgrade (recognizing several digits in a row) — dataset work, model iteration, and evaluation.
+            </p>
+      
+            <div class="project-tags">
+              <span>Deep Learning</span>
+              <span>CNN</span>
+              <span>Evaluation</span>
+            </div>
+      
+            <div class="project-actions">
+              <a class="btn btn-ghost" href="https://github.com/JasurCodeAI" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github"></i> Updates
+              </a>
+            </div>
+          </article>
+      
+        </div>
+      </section>
+      
+
+      <section class="section" id="achievements">
         <h2 class="title">Achievements</h2>
         <ul class="bullets">
           {% for a in data.achievements %}
@@ -95,8 +219,28 @@
           {% endfor %}
         </ul>
       </section>
+      <div class="certificates">
 
-      <section class="section">
+        <div class="certificate-card">
+          <img class="cert-img"
+               src="static/img/certificates/ielts.jpg"
+               data-full="static/img/certificates/ielts.jpg"
+               alt="IELTS Certificate">
+          <p>IELTS Certificate — Band 7 (2025)</p>
+        </div>
+      
+        <div class="certificate-card">
+          <img class="cert-img"
+               src="static/img/certificates/csca.jpg"
+               data-full="static/img/certificates/csca.jpg"
+               alt="CSCA Score">
+          <p>CSCA Score — Physics 95%, Math 87.5%</p>
+        </div>
+      
+      </div>
+      
+      
+      <section class="section" id="education">
         <h2 class="title">Education</h2>
         <ul class="bullets">
           {% for ed in data.education %}
@@ -107,19 +251,157 @@
     </main>
   </div>
 
-  <script>
-    // scroll reveal for cards
-    const cards = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('show');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
+  <section class="section" id="timeline">
+    <h2 class="title">Timeline</h2>
+  
+    <div class="timeline">
+  
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3 class="tl-title"><span class="tl-ico">💻</span> Started programming</h3>
+            <span class="tl-date">2022</span>
+          </div>
+          <p class="tl-text">
+            Began learning programming consistently and building strong discipline through daily practice.
+          </p>
+        </div>
+      </div>
+  
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3 class="tl-title"><span class="tl-ico">🌐</span> Built my first website</h3>
+            <span class="tl-date">2023</span>
+          </div>
+          <p class="tl-text">
+            Created my first personal website and improved my web foundations (HTML/CSS + basic structure).
+          </p>
+        </div>
+      </div>
+  
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3 class="tl-title"><span class="tl-ico">🤖</span> First AI projects & open-source activity</h3>
+            <span class="tl-date">2024</span>
+          </div>
+          <p class="tl-text">
+            Started building practical ML projects (digit recognition) and maintaining repositories on GitHub.
+          </p>
+        </div>
+      </div>
+  
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3 class="tl-title"><span class="tl-ico">🏆</span> IELTS Band 7</h3>
+            <span class="tl-date">2025</span>
+          </div>
+          <p class="tl-text">
+            Achieved IELTS Band 7 while continuing consistent learning in programming and AI.
+          </p>
+        </div>
+      </div>
+  
+      <div class="tl-item reveal">
+        <div class="tl-dot now"></div>
+        <div class="tl-card now">
+          <div class="tl-head">
+            <h3 class="tl-title">
+              <span class="tl-ico">🎓</span> CSCA results & university applications
+              <span class="now-badge">NOW</span>
+            </h3>
+            <span class="tl-date">2026</span>
+          </div>
+          <p class="tl-text">
+            Strengthening my portfolio for top universities in China and showcasing academic results (CSCA: Physics 95%, Math 87.5%).
+          </p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
 
-    cards.forEach(c => io.observe(c));
-  </script>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" alt="Certificate preview">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // reveal animation (for cards/projects if they have .reveal)
+      const cards = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('show');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      cards.forEach(c => io.observe(c));
+    
+      // certificates lightbox
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
+    
+      // если вдруг lightbox не вставили — просто ничего не делаем (без ошибок)
+      if (!lightbox || !lightboxImg || !lightboxClose) return;
+    
+      document.querySelectorAll('.cert-img').forEach(img => {
+        img.addEventListener('click', () => {
+          const full = img.getAttribute('data-full') || img.src;
+          lightboxImg.src = full;
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+    
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
+    
+      lightboxClose.addEventListener('click', closeLightbox);
+    
+      // click outside image closes
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    
+      // ESC closes
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    });
+
+    document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', function() {
+
+    const target = document.querySelector(this.getAttribute('href'));
+
+    target.classList.add('highlight');
+
+    setTimeout(()=>{
+      target.classList.remove('highlight');
+    },1200);
+
+  });
+});
+    </script>
+      
 </body>
 </html>
